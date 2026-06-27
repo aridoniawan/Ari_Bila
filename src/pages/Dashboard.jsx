@@ -117,20 +117,20 @@ const Dashboard = () => {
       
       {/* Target & Tabungan Card */}
       <div className="card mb-4">
-        <div className="flex justify-between items-start mb-4">
-          <div>
+        <div className="flex justify-between items-start mb-4" style={{ flexWrap: 'wrap', gap: '1rem' }}>
+          <div style={{ flex: '1 1 min-content' }}>
             <h3 className="text-muted mb-1" style={{ fontSize: '0.875rem' }}>
               Total Kebutuhan Biaya ({packageChoice})
               <button className="btn-icon inline-flex ml-2" onClick={handleOpenModal} style={{padding: '2px'}}><Edit2 size={12}/></button>
             </h3>
-            <div style={{ fontSize: '1.75rem', fontWeight: 'bold', color: 'var(--color-primary)' }}>
+            <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--color-primary)', wordBreak: 'break-word' }}>
               {formatCurrency(activeTarget)}
             </div>
             <div className="text-muted mt-1" style={{ fontSize: '0.75rem' }}>Otomatis dikalkulasi dari pengisian Vendor</div>
           </div>
-          <div style={{ textAlign: 'right' }}>
+          <div style={{ textAlign: 'left', flex: '1 1 min-content' }}>
             <h3 className="text-muted mb-1" style={{ fontSize: '0.875rem' }}>Total Tabungan</h3>
-            <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--color-text-main)' }}>
+            <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--color-text-main)', wordBreak: 'break-word' }}>
               {formatCurrency(totalTabungan)}
             </div>
             <a href="/tabungan" className="text-primary mt-1 inline-block" style={{ fontSize: '0.75rem' }}>Lihat Riwayat &rarr;</a>
@@ -138,7 +138,7 @@ const Dashboard = () => {
         </div>
 
         {/* Split Progress Bar */}
-        <div className="mb-2 flex justify-between text-sm" style={{ fontSize: '0.75rem' }}>
+        <div className="mb-2 flex justify-between text-sm" style={{ fontSize: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
           <span style={{ color: 'var(--color-secondary)', fontWeight: 600 }}>Pria: {formatCurrency(tabunganPria)} ({progressPria.toFixed(1)}%)</span>
           <span style={{ color: 'var(--color-primary)', fontWeight: 600 }}>Wanita: {formatCurrency(tabunganWanita)} ({progressWanita.toFixed(1)}%)</span>
         </div>

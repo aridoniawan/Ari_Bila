@@ -144,22 +144,29 @@ const Sidebar = () => {
           .sidebar-nav {
             flex-direction: row !important;
             padding: 0.5rem !important;
-            justify-content: space-around;
+            justify-content: flex-start !important;
             align-items: center;
             width: 100%;
-            gap: 0 !important;
+            gap: 1rem !important;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+          }
+          .sidebar-nav::-webkit-scrollbar {
+            display: none;
           }
           .nav-link {
             flex-direction: column !important;
             gap: 0.25rem !important;
             padding: 0.5rem !important;
             text-align: center;
-            flex: 1;
+            flex: 0 0 auto !important;
+            min-width: 4rem;
           }
           .nav-label {
             font-size: 0.65rem !important;
             line-height: 1;
-            white-space: nowrap;
+            white-space: normal;
           }
           .mobile-header {
             display: flex !important;
